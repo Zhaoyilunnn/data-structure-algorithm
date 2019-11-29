@@ -17,9 +17,15 @@ int main(int argc, const char * argv[]) {
     root->m_left->m_right = new treeNode(4);
     root->m_right->m_left = new treeNode(5);
     root->m_right->m_right = new treeNode(6);
-    
+    // start traverse
+    cout << "Start preorder traverse\n";
+    preorderRecursive(root);
+    cout << "Start inorder traverse\n";
+    inorderRecursive(root);
+    cout << "Start postorder traverse\n";
+    postorderRecursive(root);
     preorderNonrecursive(root);
+    inorderNonrecursive(root);
     postorderNonrecursive(root);
     level(root);
-    inorderNonrecursive(root);
 }

@@ -10,11 +10,15 @@
 //#include <stack> // currently self define a stack using vector
 
 void preorderRecursive(treeNode* root) {
-    
+    root->Visit();
+    if (NULL != root->m_left)
+        preorderRecursive(root->m_left);
+    if (NULL != root->m_right)
+        preorderRecursive(root->m_right);
 }
 
 void preorderNonrecursive(treeNode* root) {
-    cout << "Start preorder traverse\n" ;
+    cout << "Start preorder traverse (nonrecursive)\n" ;
     vector<treeNode*> vStack;
     vStack.push_back(root);
     treeNode* p = NULL;
@@ -36,11 +40,15 @@ void preorderNonrecursive(treeNode* root) {
 }
 
 void inorderRecursive(treeNode* root) {
-    
+    if (NULL != root->m_left)
+        inorderRecursive(root->m_left);
+    root->Visit();
+    if (NULL != root->m_right)
+        inorderRecursive(root->m_right);
 }
 
 void inorderNonrecursive(treeNode* root) {
-    cout << "Start inorder traverse\n" ;
+    cout << "Start inorder traverse (nonrecursive)\n";
     vector<treeNode*> vStack;
     vStack.push_back(root);
     treeNode* p = root;
@@ -64,11 +72,15 @@ void inorderNonrecursive(treeNode* root) {
 }
 
 void postorderRecursive(treeNode* root) {
-    
+    if (NULL != root->m_left)
+        postorderRecursive(root->m_left);
+    if (NULL != root->m_right)
+        postorderRecursive(root->m_right);
+    root->Visit();
 }
 
 void postorderNonrecursive(treeNode* root) {
-    cout << "Start postorder traverse\n" ;
+    cout << "Start postorder traverse (nonrecursive)\n";
     vector<treeNode*> vStack;
     vector<treeNode*> vStackOut;
     vStack.push_back(root);
