@@ -40,7 +40,27 @@ void inorderRecursive(treeNode* root) {
 }
 
 void inorderNonrecursive(treeNode* root) {
-    
+    cout << "Start inorder traverse\n" ;
+    vector<treeNode*> vStack;
+    vStack.push_back(root);
+    treeNode* p = root;
+    int top = 0; // stack top
+    while (!vStack.empty()) {
+        while (NULL != p->m_left) {
+            top++;
+            vStack.push_back(p->m_left);
+            p = p->m_left;
+        }
+        p = vStack[top];
+        top--;
+        vStack.pop_back();
+        p->Visit();
+        if (NULL != p->m_right) {
+            top++;
+            vStack.push_back(p->m_right);
+            p = p->m_right;
+        }
+    }
 }
 
 void postorderRecursive(treeNode* root) {
@@ -70,5 +90,27 @@ void postorderNonrecursive(treeNode* root) {
     }
     for (int i = int(vStackOut.size()-1); i >= 0 ; i--) {
         vStackOut[i]->Visit();
+    }
+}
+
+void level(treeNode* root) {
+    cout << "Start lever traversal\n";
+    vector<treeNode*> vQueue;
+    vQueue.push_back(root);
+    treeNode* p = NULL;
+    int front = 0;
+    while (front != -1) {
+        p = vQueue[front];
+        front--;
+        vQueue.pop_back();
+        p->Visit();
+        if (NULL != p->m_left) {
+            vQueue.insert(vQueue.begin(), p->m_left);
+            front++;
+        }
+        if (NULL != p->m_right) {
+            vQueue.insert(vQueue.begin(), p->m_right);
+            front++;
+        }
     }
 }

@@ -14,8 +14,12 @@ int main(int argc, const char * argv[]) {
     root->m_left = new treeNode(1);
     root->m_right = new treeNode(2);
     root->m_left->m_left = new treeNode(3);
-    root->m_right->m_left = new treeNode(4);
+    root->m_left->m_right = new treeNode(4);
+    root->m_right->m_left = new treeNode(5);
+    root->m_right->m_right = new treeNode(6);
     
     preorderNonrecursive(root);
     postorderNonrecursive(root);
+    level(root);
+    inorderNonrecursive(root);
 }

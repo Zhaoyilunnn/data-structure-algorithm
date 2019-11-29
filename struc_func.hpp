@@ -50,6 +50,8 @@ void inorderNonrecursive(treeNode* root);
 // Postorder traversal
 void postorderRecursive(treeNode* root);
 void postorderNonrecursive(treeNode* root);
+// Level traversal
+void level(treeNode* root);
 
 //treeNode* creatTree(vector<int>& treeVals);
 
