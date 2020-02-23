@@ -8,4 +8,4 @@ include_directories(.)
 add_executable(data_structure_learn
         main.cpp
         struc_func.cpp
-        struc_func.hpp)
+        struc_func.h)

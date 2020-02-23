@@ -6,7 +6,7 @@
 //  Copyright © 2019 zyl. All rights reserved.
 //
 
-#include "struc_func.hpp"
+#include "struc_func.h"
 //#include <stack> // currently self define a stack using vector
 
 void preorderRecursive(treeNode* root) {
@@ -125,4 +125,21 @@ void level(treeNode* root) {
             front++;
         }
     }
+}
+
+
+void inOrderBuildThread(treeNodeThread* root, treeNodeThread* &pre) {
+    if (root->left)
+        inOrderBuildThread(root->left, pre);
+    if (!root->left) {
+        root->lFlag = 1;
+        root->left = pre;
+    }
+    if (!pre->right){
+        pre->rFlag = 1;
+        pre->right = root;
+    }
+    pre = root;
+    if (root->right)
+        inOrderBuildThread(root->right, pre);
 }

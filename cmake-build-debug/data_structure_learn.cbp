@@ -88,7 +88,7 @@
 		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/struc_func.cpp">
 			<Option target="data_structure_learn"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/struc_func.hpp">
+		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/struc_func.h">
 			<Option target="data_structure_learn"/>
 		</Unit>
 		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/CMakeLists.txt">

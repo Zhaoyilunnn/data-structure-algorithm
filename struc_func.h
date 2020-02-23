@@ -41,6 +41,15 @@ public:
     }
 };
 
+// 线索二叉树
+struct treeNodeThread {
+    int item = 0;
+    int lFlag = 0;  // if lFlag == 1, then left is previous node
+    int rFlag = 0;  // if rFlag == 1, then right is next node
+    treeNodeThread* left = nullptr;
+    treeNodeThread* right = nullptr;
+};
+
 // Preorder traversal
 void preorderRecursive(treeNode* root);
 void preorderNonrecursive(treeNode* root);
@@ -52,6 +61,12 @@ void postorderRecursive(treeNode* root);
 void postorderNonrecursive(treeNode* root);
 // Level traversal
 void level(treeNode* root);
+
+// 线索二叉树 --> 中序遍历建立线索
+void inOrderBuildThread(treeNodeThread* root, treeNodeThread*& pre);
+
+// 遍历线索二叉树哦
+void inOrderTraverse(treeNodeThread* Head);
 
 //treeNode* creatTree(vector<int>& treeVals);
 
