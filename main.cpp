@@ -30,71 +30,77 @@ int main(int argc, const char * argv[]) {
 //    level(root);
 
     // -------------------------- test thread tree ------------------------------------
-    treeNodeThread root = {
-            1,
-            0,
-            0,
-            nullptr,
-            nullptr
-    };
-
-    treeNodeThread root_left = {
-            2,
-            0,
-            0,
-            nullptr,
-            nullptr
-    };
-
-    treeNodeThread root_left_left = {
-            3,
-            0,
-            0,
-            nullptr,
-            nullptr
-    };
-
-    treeNodeThread root_left_right = {
-            4,
-            0,
-            0,
-            nullptr,
-            nullptr
-    };
-
-    treeNodeThread root_right = {
-            5,
-            0,
-            0,
-            nullptr,
-            nullptr
-    };
-
-    treeNodeThread root_right_right = {
-            6,
-            0,
-            0,
-            nullptr,
-            nullptr
-    };
-
-    // assign value
-    root.left = &root_left;
-    root.right = &root_right;
-    root_left.left = &root_left_left;
-    root_left.right = &root_left_right;
-    root_right.right = &root_right_right;
-    treeNodeThread Head = {
-            0,
-            0,
-            0,
-            nullptr,
-            nullptr
-    };
-    treeNodeThread* H = &Head;
-    treeNodeThread* pRoot = &root;
-    inOrderBuildThread(pRoot, H);
+//    treeNodeThread root = {
+//            1,
+//            0,
+//            0,
+//            nullptr,
+//            nullptr
+//    };
+//
+//    treeNodeThread root_left = {
+//            2,
+//            0,
+//            0,
+//            nullptr,
+//            nullptr
+//    };
+//
+//    treeNodeThread root_left_left = {
+//            3,
+//            0,
+//            0,
+//            nullptr,
+//            nullptr
+//    };
+//
+//    treeNodeThread root_left_right = {
+//            4,
+//            0,
+//            0,
+//            nullptr,
+//            nullptr
+//    };
+//
+//    treeNodeThread root_right = {
+//            5,
+//            0,
+//            0,
+//            nullptr,
+//            nullptr
+//    };
+//
+//    treeNodeThread root_right_right = {
+//            6,
+//            0,
+//            0,
+//            nullptr,
+//            nullptr
+//    };
+//
+//    // assign value
+//    root.left = &root_left;
+//    root.right = &root_right;
+//    root_left.left = &root_left_left;
+//    root_left.right = &root_left_right;
+//    root_right.right = &root_right_right;
+//    treeNodeThread Head = {
+//            0,
+//            0,
+//            0,
+//            nullptr,
+//            nullptr
+//    };
+//    treeNodeThread* H = &Head;
+//    treeNodeThread* pRoot = &root;
+//    inOrderBuildThread(pRoot, H);
 
     // --------------------------- test thread tree ---------------------------------------
+
+    // --------------------------- test build tree from traversed vectors -----------------
+    vector<int> level = {1, 2, 3, 4, 5, 6, 7};
+    vector<int> inorder = {4, 2, 5, 1, 6, 3, 7};
+    treeNode* result = buildTree(level, inorder, 0, 6);
+    // --------------------------- test build tree from traversed vectors -----------------
     return 0;
 }

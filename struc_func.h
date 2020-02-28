@@ -6,10 +6,9 @@
 //  Copyright © 2019 zyl. All rights reserved.
 //
 
-#ifndef struc_func_hpp
-#define struc_func_hpp
+#ifndef struc_func_h
+#define struc_func_h
 
-#include <stdio.h>
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -18,20 +17,18 @@ class treeNode {
     
 public:
     int m_val = 0;
-    treeNode* m_left = NULL;
-    treeNode* m_right= NULL;
+    treeNode* m_left = nullptr;
+    treeNode* m_right= nullptr;
     
     // construct
-    treeNode(int val) {
+    explicit treeNode(int val) {
         m_val = val;
     }
     
     // deconstruct
     ~treeNode() {
-        if (NULL != m_left)
-            delete m_left;
-        if (NULL != m_right)
-            delete m_right;
+        delete m_left;
+        delete m_right;
         m_val = 0;
     }
     
@@ -65,9 +62,9 @@ void level(treeNode* root);
 // 线索二叉树 --> 中序遍历建立线索
 void inOrderBuildThread(treeNodeThread* root, treeNodeThread*& pre);
 
-// 遍历线索二叉树哦
+// 遍历线索二叉树 --> to do
 void inOrderTraverse(treeNodeThread* Head);
 
-//treeNode* creatTree(vector<int>& treeVals);
-
-#endif /* struc_func_hpp */
+// 从层次遍历序列和中序遍历序列得到二叉树
+treeNode* buildTree(vector<int>& level, vector<int>& inorder, int L, int R);
+#endif /* struc_func_h */

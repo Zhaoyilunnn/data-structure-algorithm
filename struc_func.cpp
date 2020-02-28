@@ -11,9 +11,9 @@
 
 void preorderRecursive(treeNode* root) {
     root->Visit();
-    if (NULL != root->m_left)
+    if (root->m_left)
         preorderRecursive(root->m_left);
-    if (NULL != root->m_right)
+    if (root->m_right)
         preorderRecursive(root->m_right);
 }
 
@@ -21,18 +21,18 @@ void preorderNonrecursive(treeNode* root) {
     cout << "Start preorder traverse (nonrecursive)\n" ;
     vector<treeNode*> vStack;
     vStack.push_back(root);
-    treeNode* p = NULL;
+    treeNode* p = nullptr;
     int top = 0; // stack top
     while (!vStack.empty()) {
         p = vStack[top];
         top--;
         vStack.pop_back();
         p->Visit();
-        if (NULL != p->m_right) {
+        if (p->m_right) {
             top++;
             vStack.push_back(p->m_right);
         }
-        if (NULL != p->m_left) {
+        if (p->m_left) {
             top++;
             vStack.push_back(p->m_left);
         }
@@ -40,10 +40,10 @@ void preorderNonrecursive(treeNode* root) {
 }
 
 void inorderRecursive(treeNode* root) {
-    if (NULL != root->m_left)
+    if (root->m_left)
         inorderRecursive(root->m_left);
     root->Visit();
-    if (NULL != root->m_right)
+    if (root->m_right)
         inorderRecursive(root->m_right);
 }
 
@@ -54,7 +54,7 @@ void inorderNonrecursive(treeNode* root) {
     treeNode* p = root;
     int top = 0; // stack top
     while (!vStack.empty()) {
-        while (NULL != p->m_left) {
+        while (p->m_left) {
             top++;
             vStack.push_back(p->m_left);
             p = p->m_left;
@@ -63,7 +63,7 @@ void inorderNonrecursive(treeNode* root) {
         top--;
         vStack.pop_back();
         p->Visit();
-        if (NULL != p->m_right) {
+        if (p->m_right) {
             top++;
             vStack.push_back(p->m_right);
             p = p->m_right;
@@ -72,9 +72,9 @@ void inorderNonrecursive(treeNode* root) {
 }
 
 void postorderRecursive(treeNode* root) {
-    if (NULL != root->m_left)
+    if (root->m_left)
         postorderRecursive(root->m_left);
-    if (NULL != root->m_right)
+    if (root->m_right)
         postorderRecursive(root->m_right);
     root->Visit();
 }
@@ -84,18 +84,18 @@ void postorderNonrecursive(treeNode* root) {
     vector<treeNode*> vStack;
     vector<treeNode*> vStackOut;
     vStack.push_back(root);
-    treeNode* p = NULL;
+    treeNode* p = nullptr;
     int top = 0; // stack top
     while (!vStack.empty()) {
         p = vStack[top];
         top--;
         vStack.pop_back();
         vStackOut.push_back(p);
-        if (NULL != p->m_left) {
+        if (p->m_left) {
             top++;
             vStack.push_back(p->m_left);
         }
-        if (NULL != p->m_right) {
+        if (p->m_right) {
             top++;
             vStack.push_back(p->m_right);
         }
@@ -109,24 +109,23 @@ void level(treeNode* root) {
     cout << "Start lever traversal\n";
     vector<treeNode*> vQueue;
     vQueue.push_back(root);
-    treeNode* p = NULL;
+    treeNode* p = nullptr;
     int front = 0;
     while (front != -1) {
         p = vQueue[front];
         front--;
         vQueue.pop_back();
         p->Visit();
-        if (NULL != p->m_left) {
+        if (p->m_left) {
             vQueue.insert(vQueue.begin(), p->m_left);
             front++;
         }
-        if (NULL != p->m_right) {
+        if (p->m_right) {
             vQueue.insert(vQueue.begin(), p->m_right);
             front++;
         }
     }
 }
-
 
 void inOrderBuildThread(treeNodeThread* root, treeNodeThread* &pre) {
     if (root->left)
@@ -143,3 +142,34 @@ void inOrderBuildThread(treeNodeThread* root, treeNodeThread* &pre) {
     if (root->right)
         inOrderBuildThread(root->right, pre);
 }
+
+int search(vector<int>& dest, int val, int L, int R) {
+    for (int i = L; i <= R; i++) {
+        if (dest[i] == val)
+            return i;
+    }
+    return -1;
+}
+
+void sublevel(vector<int>& sublevel, vector<int>& level, vector<int>& inorder, int L, int R) {
+    for (int i : level) {
+        if (search(inorder, i, L, R) >= 0)
+            sublevel.push_back(i);
+    }
+}
+
+treeNode* buildTree(vector<int>& level, vector<int>& inorder, int L, int R) {
+    if (L > R)
+        return nullptr;
+    auto* root = new treeNode(level[0]);
+    int i = search(inorder, level[0], L, R);
+    vector<int> lLevel, rLevel;
+    int lR = i-1;
+    int rL = i+1;
+    sublevel(lLevel, level, inorder, L, lR);
+    sublevel(rLevel, level, inorder, rL, R);
+    root->m_left = buildTree(lLevel, inorder, L, lR);
+    root->m_right = buildTree(rLevel, inorder, rL, R);
+    return root;
+}
+
