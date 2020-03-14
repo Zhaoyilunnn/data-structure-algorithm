@@ -106,7 +106,7 @@ void postorderNonrecursive(treeNode* root) {
 }
 
 void level(treeNode* root) {
-    cout << "Start lever traversal\n";
+    cout << "Start level traversal\n";
     vector<treeNode*> vQueue;
     vQueue.push_back(root);
     treeNode* p = nullptr;
@@ -123,6 +123,22 @@ void level(treeNode* root) {
         if (p->m_right) {
             vQueue.insert(vQueue.begin(), p->m_right);
             front++;
+        }
+    }
+}
+
+void level_plus(treeNode* root) {
+    cout << "Start level traversal" << endl;
+    vector<treeNode*> vctQueue;
+    vctQueue.push_back(root);
+    while (!vctQueue.empty()) {
+        int size = vctQueue.size();
+        for (int i = 0; i < size; i++) {
+            if (vctQueue[i]->m_left)
+                vctQueue.push_back(vctQueue[i]->m_left);
+            if (vctQueue[i]->m_right)
+                vctQueue.push_back(vctQueue[i]->m_right);
+            vctQueue.erase(vctQueue.begin());
         }
     }
 }

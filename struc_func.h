@@ -58,6 +58,7 @@ void postorderRecursive(treeNode* root);
 void postorderNonrecursive(treeNode* root);
 // Level traversal
 void level(treeNode* root);
+void level_plus(treeNode* root); // improved the simplicity of "level" function
 
 // 线索二叉树 --> 中序遍历建立线索
 void inOrderBuildThread(treeNodeThread* root, treeNodeThread*& pre);
