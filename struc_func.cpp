@@ -134,10 +134,11 @@ void level_plus(treeNode* root) {
     while (!vctQueue.empty()) {
         int size = vctQueue.size();
         for (int i = 0; i < size; i++) {
-            if (vctQueue[i]->m_left)
-                vctQueue.push_back(vctQueue[i]->m_left);
-            if (vctQueue[i]->m_right)
-                vctQueue.push_back(vctQueue[i]->m_right);
+            if (vctQueue[0]->m_left)
+                vctQueue.push_back(vctQueue[0]->m_left);
+            if (vctQueue[0]->m_right)
+                vctQueue.push_back(vctQueue[0]->m_right);
+            vctQueue[0]->Visit();
             vctQueue.erase(vctQueue.begin());
         }
     }
@@ -174,6 +175,11 @@ void sublevel(vector<int>& sublevel, vector<int>& level, vector<int>& inorder, i
     }
 }
 
+// Here L is the start position and R is the end position
+// The operating principle is as follows
+//      1. Find the root node from the inorder sequence --> the inorder[0]
+//      2. Based on the root node, we can determine the root's left child nodes and right child nodes
+//      3. Find the left level nodes right level nodes in level and then recursively execute buildTree function
 treeNode* buildTree(vector<int>& level, vector<int>& inorder, int L, int R) {
     if (L > R)
         return nullptr;
@@ -187,5 +193,26 @@ treeNode* buildTree(vector<int>& level, vector<int>& inorder, int L, int R) {
     root->m_left = buildTree(lLevel, inorder, L, lR);
     root->m_right = buildTree(rLevel, inorder, rL, R);
     return root;
+}
+
+// Here the matrix is M by M, if the element is 1, and the position is (m, n), it means that the number m+1 has
+// a connection with number n+1 node
+void graphTraverseBFS(vector<vector<int>>& matrix) {
+    vector<int> visited(matrix.size()+1, 0);
+    visited[1] = 1;
+    queue<int> q;
+    q.push(1);
+    while (!q.empty()) {
+        int top = q.front();
+        cout << top << endl;
+        q.pop();
+        int i;
+        for (i = 1; i <= matrix.size(); i++) {
+            if (visited[i] == 0 && matrix[top-1][i-1] == 1) {
+                visited[i] = 1;
+                q.push(i);
+            }
+        }
+    }
 }
 

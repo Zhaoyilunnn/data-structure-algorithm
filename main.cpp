@@ -17,7 +17,7 @@ int main(int argc, const char * argv[]) {
 //    root->m_left->m_right = new treeNode(4);
 //    root->m_right->m_left = new treeNode(5);
 //    root->m_right->m_right = new treeNode(6);
-//    // start traverse
+    // start traverse
 //    cout << "Start preorder traverse\n";
 //    preorderRecursive(root);
 //    cout << "Start inorder traverse\n";
@@ -28,6 +28,7 @@ int main(int argc, const char * argv[]) {
 //    inorderNonrecursive(root);
 //    postorderNonrecursive(root);
 //    level(root);
+//    level_plus(root);
 
     // -------------------------- test thread tree ------------------------------------
 //    treeNodeThread root = {
@@ -98,9 +99,24 @@ int main(int argc, const char * argv[]) {
     // --------------------------- test thread tree ---------------------------------------
 
     // --------------------------- test build tree from traversed vectors -----------------
-    vector<int> level = {1, 2, 3, 4, 5, 6, 7};
-    vector<int> inorder = {4, 2, 5, 1, 6, 3, 7};
-    treeNode* result = buildTree(level, inorder, 0, 6);
+//    vector<int> level = {1, 2, 3, 4, 5, 6, 7};
+//    vector<int> inorder = {4, 2, 5, 1, 6, 3, 7};
+//    treeNode* result = buildTree(level, inorder, 0, 6);
     // --------------------------- test build tree from traversed vectors -----------------
+
+    // --------------------------- test queue and BFS ---------------------------
+    vector<vector<int>> matrix =
+            {{0, 1, 0, 0, 1, 0, 0, 0, 0, 0},
+             {1, 0, 1, 1, 0, 0, 0, 0, 0, 0},
+             {0, 1, 0, 0, 0, 0, 1, 0, 0, 0},
+             {0, 1, 0, 0, 1, 1, 0, 0, 0, 0},
+             {1, 0, 0, 1, 0, 0, 0, 0, 1, 0},
+             {0, 0, 0, 1, 0, 0, 1, 1, 0, 0},
+             {0, 0, 1, 0, 0, 1, 0, 0, 0, 1},
+             {0, 0, 0, 0, 0, 1, 0, 0, 1, 1},
+             {0, 0, 0, 0, 1, 0, 0, 1, 0, 0},
+             {0, 0, 0, 0, 0, 0, 1, 1, 0, 0}};
+    graphTraverseBFS(matrix);
+    // --------------------------- test queue and BFS ---------------------------
     return 0;
 }

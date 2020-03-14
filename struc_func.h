@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <vector>
+#include <queue>
 using namespace std;
 
 class treeNode {
@@ -68,4 +69,7 @@ void inOrderTraverse(treeNodeThread* Head);
 
 // 从层次遍历序列和中序遍历序列得到二叉树
 treeNode* buildTree(vector<int>& level, vector<int>& inorder, int L, int R);
+
+// Understand the relationship between queue and BFS
+void graphTraverseBFS(vector<vector<int>>& matrix);
 #endif /* struc_func_h */
