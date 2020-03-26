@@ -82,13 +82,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/common.h">
+			<Option target="data_structure_learn"/>
+		</Unit>
+		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/graph.cpp">
+			<Option target="data_structure_learn"/>
+		</Unit>
+		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/graph.h">
+			<Option target="data_structure_learn"/>
+		</Unit>
 		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/main.cpp">
 			<Option target="data_structure_learn"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/struc_func.cpp">
+		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/tree.cpp">
 			<Option target="data_structure_learn"/>
 		</Unit>
-		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/struc_func.h">
+		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/tree.h">
 			<Option target="data_structure_learn"/>
 		</Unit>
 		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/CMakeLists.txt">

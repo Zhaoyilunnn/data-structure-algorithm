@@ -6,7 +6,8 @@
 //  Copyright © 2019 zyl. All rights reserved.
 //
 
-#include "struc_func.h"
+#include "tree.h"
+#include "graph.h"
 
 int main(int argc, const char * argv[]) {
     // create a tree for test

@@ -7,5 +7,5 @@ include_directories(.)
 
 add_executable(data_structure_learn
         main.cpp
-        struc_func.cpp
-        struc_func.h)
+        tree.cpp
+        tree.h graph.cpp graph.h common.h)

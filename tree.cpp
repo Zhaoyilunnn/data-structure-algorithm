@@ -6,7 +6,7 @@
 //  Copyright © 2019 zyl. All rights reserved.
 //
 
-#include "struc_func.h"
+#include "tree.h"
 //#include <stack> // currently self define a stack using vector
 
 void preorderRecursive(treeNode* root) {
@@ -144,6 +144,9 @@ void level_plus(treeNode* root) {
     }
 }
 
+/**************************************************************************/
+/* To do: implement non-traverse method */
+/**************************************************************************/
 void inOrderBuildThread(treeNodeThread* root, treeNodeThread* &pre) {
     if (root->left)
         inOrderBuildThread(root->left, pre);
@@ -195,24 +198,7 @@ treeNode* buildTree(vector<int>& level, vector<int>& inorder, int L, int R) {
     return root;
 }
 
-// Here the matrix is M by M, if the element is 1, and the position is (m, n), it means that the number m+1 has
-// a connection with number n+1 node
-void graphTraverseBFS(vector<vector<int>>& matrix) {
-    vector<int> visited(matrix.size()+1, 0);
-    visited[1] = 1;
-    queue<int> q;
-    q.push(1);
-    while (!q.empty()) {
-        int top = q.front();
-        cout << top << endl;
-        q.pop();
-        int i;
-        for (i = 1; i <= matrix.size(); i++) {
-            if (visited[i] == 0 && matrix[top-1][i-1] == 1) {
-                visited[i] = 1;
-                q.push(i);
-            }
-        }
-    }
-}
+
+
+
 

@@ -123,6 +123,33 @@ data_structure_learn/fast:
 	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/build
 .PHONY : data_structure_learn/fast
 
+graph.o: graph.cpp.o
+
+.PHONY : graph.o
+
+# target to build an object file
+graph.cpp.o:
+	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/graph.cpp.o
+.PHONY : graph.cpp.o
+
+graph.i: graph.cpp.i
+
+.PHONY : graph.i
+
+# target to preprocess a source file
+graph.cpp.i:
+	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/graph.cpp.i
+.PHONY : graph.cpp.i
+
+graph.s: graph.cpp.s
+
+.PHONY : graph.s
+
+# target to generate assembly for a file
+graph.cpp.s:
+	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/graph.cpp.s
+.PHONY : graph.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -150,32 +177,32 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-struc_func.o: struc_func.cpp.o
+tree.o: tree.cpp.o
 
-.PHONY : struc_func.o
+.PHONY : tree.o
 
 # target to build an object file
-struc_func.cpp.o:
-	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/struc_func.cpp.o
-.PHONY : struc_func.cpp.o
+tree.cpp.o:
+	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/tree.cpp.o
+.PHONY : tree.cpp.o
 
-struc_func.i: struc_func.cpp.i
+tree.i: tree.cpp.i
 
-.PHONY : struc_func.i
+.PHONY : tree.i
 
 # target to preprocess a source file
-struc_func.cpp.i:
-	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/struc_func.cpp.i
-.PHONY : struc_func.cpp.i
+tree.cpp.i:
+	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/tree.cpp.i
+.PHONY : tree.cpp.i
 
-struc_func.s: struc_func.cpp.s
+tree.s: tree.cpp.s
 
-.PHONY : struc_func.s
+.PHONY : tree.s
 
 # target to generate assembly for a file
-struc_func.cpp.s:
-	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/struc_func.cpp.s
-.PHONY : struc_func.cpp.s
+tree.cpp.s:
+	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/tree.cpp.s
+.PHONY : tree.cpp.s
 
 # Help Target
 help:
@@ -186,12 +213,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... data_structure_learn"
 	@echo "... edit_cache"
+	@echo "... graph.o"
+	@echo "... graph.i"
+	@echo "... graph.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... struc_func.o"
-	@echo "... struc_func.i"
-	@echo "... struc_func.s"
+	@echo "... tree.o"
+	@echo "... tree.i"
+	@echo "... tree.s"
 .PHONY : help
 
 

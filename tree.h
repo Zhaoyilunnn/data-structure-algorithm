@@ -6,14 +6,13 @@
 //  Copyright © 2019 zyl. All rights reserved.
 //
 
-#ifndef struc_func_h
-#define struc_func_h
+#ifndef DATA_STRUCTURE_LEARN_TREE_H
+#define DATA_STRUCTURE_LEARN_TREE_H
 
-#include <iostream>
-#include <vector>
-#include <queue>
-using namespace std;
+#include "common.h"
 
+/****************************************************************/
+/* tree */
 class treeNode {
     
 public:
@@ -48,6 +47,14 @@ struct treeNodeThread {
     treeNodeThread* right = nullptr;
 };
 
+/****************************************************************/
+
+
+
+
+
+/***************************************************************/
+/* Traverse of binary tree */
 // Preorder traversal
 void preorderRecursive(treeNode* root);
 void preorderNonrecursive(treeNode* root);
@@ -60,16 +67,24 @@ void postorderNonrecursive(treeNode* root);
 // Level traversal
 void level(treeNode* root);
 void level_plus(treeNode* root); // improved the simplicity of "level" function
+/***************************************************************/
 
+
+/***************************************************************/
+/* Thread binary tree */
 // 线索二叉树 --> 中序遍历建立线索
 void inOrderBuildThread(treeNodeThread* root, treeNodeThread*& pre);
-
+void inOrderBuildThreadNonRecursive(treeNodeThread* root, treeNodeThread* &pre);
 // 遍历线索二叉树 --> to do
 void inOrderTraverse(treeNodeThread* Head);
+/***************************************************************/
 
+
+/***************************************************************/
+/* From sequence to binary tree */
 // 从层次遍历序列和中序遍历序列得到二叉树
 treeNode* buildTree(vector<int>& level, vector<int>& inorder, int L, int R);
+/***************************************************************/
 
-// Understand the relationship between queue and BFS
-void graphTraverseBFS(vector<vector<int>>& matrix);
-#endif /* struc_func_h */
+
+#endif //DATA_STRUCTURE_LEARN_GRAPH_H

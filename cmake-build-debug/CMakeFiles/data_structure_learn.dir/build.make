@@ -70,32 +70,47 @@ CMakeFiles/data_structure_learn.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/data_structure_learn.dir/main.cpp.s"
 	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/d/Program_Cpp/data_structure_learn/main.cpp -o CMakeFiles/data_structure_learn.dir/main.cpp.s
 
-CMakeFiles/data_structure_learn.dir/struc_func.cpp.o: CMakeFiles/data_structure_learn.dir/flags.make
-CMakeFiles/data_structure_learn.dir/struc_func.cpp.o: ../struc_func.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/d/Program_Cpp/data_structure_learn/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/data_structure_learn.dir/struc_func.cpp.o"
-	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/data_structure_learn.dir/struc_func.cpp.o -c /cygdrive/d/Program_Cpp/data_structure_learn/struc_func.cpp
+CMakeFiles/data_structure_learn.dir/tree.cpp.o: CMakeFiles/data_structure_learn.dir/flags.make
+CMakeFiles/data_structure_learn.dir/tree.cpp.o: ../tree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/d/Program_Cpp/data_structure_learn/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/data_structure_learn.dir/tree.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/data_structure_learn.dir/tree.cpp.o -c /cygdrive/d/Program_Cpp/data_structure_learn/tree.cpp
 
-CMakeFiles/data_structure_learn.dir/struc_func.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/data_structure_learn.dir/struc_func.cpp.i"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/d/Program_Cpp/data_structure_learn/struc_func.cpp > CMakeFiles/data_structure_learn.dir/struc_func.cpp.i
+CMakeFiles/data_structure_learn.dir/tree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/data_structure_learn.dir/tree.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/d/Program_Cpp/data_structure_learn/tree.cpp > CMakeFiles/data_structure_learn.dir/tree.cpp.i
 
-CMakeFiles/data_structure_learn.dir/struc_func.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/data_structure_learn.dir/struc_func.cpp.s"
-	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/d/Program_Cpp/data_structure_learn/struc_func.cpp -o CMakeFiles/data_structure_learn.dir/struc_func.cpp.s
+CMakeFiles/data_structure_learn.dir/tree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/data_structure_learn.dir/tree.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/d/Program_Cpp/data_structure_learn/tree.cpp -o CMakeFiles/data_structure_learn.dir/tree.cpp.s
+
+CMakeFiles/data_structure_learn.dir/graph.cpp.o: CMakeFiles/data_structure_learn.dir/flags.make
+CMakeFiles/data_structure_learn.dir/graph.cpp.o: ../graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/cygdrive/d/Program_Cpp/data_structure_learn/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/data_structure_learn.dir/graph.cpp.o"
+	/usr/bin/c++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/data_structure_learn.dir/graph.cpp.o -c /cygdrive/d/Program_Cpp/data_structure_learn/graph.cpp
+
+CMakeFiles/data_structure_learn.dir/graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/data_structure_learn.dir/graph.cpp.i"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /cygdrive/d/Program_Cpp/data_structure_learn/graph.cpp > CMakeFiles/data_structure_learn.dir/graph.cpp.i
+
+CMakeFiles/data_structure_learn.dir/graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/data_structure_learn.dir/graph.cpp.s"
+	/usr/bin/c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /cygdrive/d/Program_Cpp/data_structure_learn/graph.cpp -o CMakeFiles/data_structure_learn.dir/graph.cpp.s
 
 # Object files for target data_structure_learn
 data_structure_learn_OBJECTS = \
 "CMakeFiles/data_structure_learn.dir/main.cpp.o" \
-"CMakeFiles/data_structure_learn.dir/struc_func.cpp.o"
+"CMakeFiles/data_structure_learn.dir/tree.cpp.o" \
+"CMakeFiles/data_structure_learn.dir/graph.cpp.o"
 
 # External object files for target data_structure_learn
 data_structure_learn_EXTERNAL_OBJECTS =
 
 data_structure_learn.exe: CMakeFiles/data_structure_learn.dir/main.cpp.o
-data_structure_learn.exe: CMakeFiles/data_structure_learn.dir/struc_func.cpp.o
+data_structure_learn.exe: CMakeFiles/data_structure_learn.dir/tree.cpp.o
+data_structure_learn.exe: CMakeFiles/data_structure_learn.dir/graph.cpp.o
 data_structure_learn.exe: CMakeFiles/data_structure_learn.dir/build.make
 data_structure_learn.exe: CMakeFiles/data_structure_learn.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/d/Program_Cpp/data_structure_learn/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable data_structure_learn.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/cygdrive/d/Program_Cpp/data_structure_learn/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable data_structure_learn.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/data_structure_learn.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
