@@ -177,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sort.o: sort.cpp.o
+
+.PHONY : sort.o
+
+# target to build an object file
+sort.cpp.o:
+	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/sort.cpp.o
+.PHONY : sort.cpp.o
+
+sort.i: sort.cpp.i
+
+.PHONY : sort.i
+
+# target to preprocess a source file
+sort.cpp.i:
+	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/sort.cpp.i
+.PHONY : sort.cpp.i
+
+sort.s: sort.cpp.s
+
+.PHONY : sort.s
+
+# target to generate assembly for a file
+sort.cpp.s:
+	$(MAKE) -f CMakeFiles/data_structure_learn.dir/build.make CMakeFiles/data_structure_learn.dir/sort.cpp.s
+.PHONY : sort.cpp.s
+
 tree.o: tree.cpp.o
 
 .PHONY : tree.o
@@ -219,6 +246,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sort.o"
+	@echo "... sort.i"
+	@echo "... sort.s"
 	@echo "... tree.o"
 	@echo "... tree.i"
 	@echo "... tree.s"

@@ -94,6 +94,12 @@
 		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/main.cpp">
 			<Option target="data_structure_learn"/>
 		</Unit>
+		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/sort.cpp">
+			<Option target="data_structure_learn"/>
+		</Unit>
+		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/sort.h">
+			<Option target="data_structure_learn"/>
+		</Unit>
 		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/tree.cpp">
 			<Option target="data_structure_learn"/>
 		</Unit>
