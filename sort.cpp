@@ -4,6 +4,22 @@
 
 #include "sort.h"
 
+/*****************************************************/
+/* Do not consume extra space */
+/*****************************************************/
+void insertSort(vector<int> &nums) {
+    for (int i = 0; i < nums.size(); i++) {
+        for (int j = i-1; j >= 0; j--) {
+            if (nums[j+1] < nums[j]) {
+                // 如果比前一个元素小就交换位置
+                int temp = nums[j];
+                nums[j] = nums[j+1];
+                nums[j+1] = temp;
+            }
+        }
+    }
+}
+
 
 /****************************************************************************/
 /* Quick sort:  divide and conquer
@@ -40,3 +56,4 @@ void quickSort(vector<int>& nums) {
     int high = nums.size()-1;
     quickSortPart(nums, low, high);
 }
+

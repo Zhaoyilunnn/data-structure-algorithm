@@ -8,6 +8,7 @@
 
 #include "tree.h"
 #include "graph.h"
+#include "sort.h"
 
 int main(int argc, const char * argv[]) {
     // create a tree for test
@@ -106,7 +107,7 @@ int main(int argc, const char * argv[]) {
     // --------------------------- test build tree from traversed vectors -----------------
 
     // --------------------------- test queue and BFS ---------------------------
-    vector<vector<int>> matrix =
+    /*vector<vector<int>> matrix =
             {{0, 1, 0, 0, 1, 0, 0, 0, 0, 0},
              {1, 0, 1, 1, 0, 0, 0, 0, 0, 0},
              {0, 1, 0, 0, 0, 0, 1, 0, 0, 0},
@@ -117,7 +118,13 @@ int main(int argc, const char * argv[]) {
              {0, 0, 0, 0, 0, 1, 0, 0, 1, 1},
              {0, 0, 0, 0, 1, 0, 0, 1, 0, 0},
              {0, 0, 0, 0, 0, 0, 1, 1, 0, 0}};
-    graphTraverseBFS(matrix);
+    graphTraverseBFS(matrix);*/
     // --------------------------- test queue and BFS ---------------------------
+
+    /********************************************/
+    /* test sort */
+    vector<int> nums = {1, 4, 5, 6, 8, 9, 11, 2, 3, 5, 3, 0};
+    insertSort(nums);
+
     return 0;
 }

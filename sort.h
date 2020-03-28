@@ -7,6 +7,9 @@
 
 #include "common.h"
 
+// simple sort
+void insertSort(vector<int>& nums);
+
 // quick sort
 void quickSort(vector<int>& nums);
 
