@@ -13,4 +13,7 @@ void insertSort(vector<int>& nums);
 // quick sort
 void quickSort(vector<int>& nums);
 
+// heap sort
+void heapSort(vector<int>& nums);
+
 #endif //DATA_STRUCTURE_LEARN_SORT_H

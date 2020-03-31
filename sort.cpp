@@ -57,3 +57,84 @@ void quickSort(vector<int>& nums) {
     quickSortPart(nums, low, high);
 }
 
+
+/****************************************************************************/
+/* Heap sort:   build a max heap, then delete the root node and update heap
+ *              and in circulation */
+/****************************************************************************/
+void heapSort(vector<int>& nums) {
+    if (nums.empty())
+        return;
+    if (nums.size() == 1)
+        return;
+
+    // build heap
+    int L = nums.size();
+    int i = L / 2 - 1;  // the position of current root node
+    while (i >= 0) {
+        int j = i; //
+        while (true) {
+            int next = 0;
+            if (2 * j + 2 <= nums.size() - 1) {
+                if (nums[2 * j + 2] >= nums[2 * j + 1])
+                    next = 2 * j + 2;
+                else
+                    next = 2 * j + 1;
+                if (nums[j] < nums[next]) {
+                    // swap the value of root and child
+                    int temp = nums[j];
+                    nums[j] = nums[next];
+                    nums[next] = temp;
+                    j = next;
+                } else
+                    break;
+            } else {
+                if (2*j+1 == nums.size()-1) {
+                    if (nums[2 * j + 1] > nums[j]) {
+                        int temp = nums[j];
+                        nums[j] = nums[2 * j + 1];
+                        nums[2 * j + 1] = temp;
+                    }
+                }
+                break;
+            }
+        }
+        i--;
+    }
+
+    // swap the root and child at the end and then update
+    int end = (int)nums.size() - 1;
+    while (end > 0) {
+        // update the tree;
+        int temp = nums[0];
+        nums[0] = nums[end];
+        nums[end] = temp;
+        i = 0;
+        while (true) {
+            if (2 * i + 2 <= end - 1) {
+                int next = 0;
+                if (nums[2 * i + 2] >= nums[2 * i + 1])
+                    next = 2 * i + 2;
+                else
+                    next = 2 * i + 1;
+                if (nums[i] < nums[next]) {
+                    temp = nums[i];
+                    nums[i] = nums[next];
+                    nums[next] = temp;
+                    i = next;
+                } else
+                    break;
+            } else {
+                if (2 * i + 1 == end - 1) {
+                    if (nums[2 * i + 1] > nums[i]) {
+                        temp = nums[i];
+                        nums[i] = nums[2 * i + 1];
+                        nums[2 * i + 1] = temp;
+                    }
+                }
+                break;
+            }
+        }
+        end--;
+    }
+}

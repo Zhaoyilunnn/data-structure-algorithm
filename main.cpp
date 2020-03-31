@@ -124,7 +124,7 @@ int main(int argc, const char * argv[]) {
     /********************************************/
     /* test sort */
     vector<int> nums = {1, 4, 5, 6, 8, 9, 11, 2, 3, 5, 3, 0};
-    insertSort(nums);
+    heapSort(nums);
 
     return 0;
 }
