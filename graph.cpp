@@ -4,6 +4,49 @@
 
 #include "graph.h"
 
+
+/******************************************************************************/
+/* set      --> denote whether current vertex node has been visited
+ * low_cost --> denote the minimum edge from current tree to current node */
+/******************************************************************************/
+int Prim(vector<vector<int>> &graph) {
+    int sum = 0;
+    int n = graph.size();
+    vector<int> set(n, 0);      // when visited, set 1
+    vector<int> low_cost(n, 0); // assume that all edge > 0
+    int v = 0;  // point to current node
+
+    // initialize low_cost
+    for (int j = 0; j < n; j++)
+        low_cost[j] = graph[v][j];
+
+    for (int i = 0; i < n-1; i++) {
+        set[v] = 1;
+        int min = 0;
+        int k = 0;
+
+        // find the minimum edge
+        for (int j = 0; j < n; j++) {
+            if ((!min || (low_cost[j] && low_cost[j] < min)) && !set[j]) {
+                min = low_cost[j];
+                k = j;
+            }
+        }
+
+        sum += min;
+        v = k;
+
+        // update low_cost
+        for (int j = 0; j < n; j++) {
+            if ((!low_cost[j] || (graph[v][j] && graph[v][j] < low_cost[j])) && !set[j])
+                low_cost[j] = graph[v][j];
+        }
+    }
+
+    return sum;
+}
+
+
 /*******************************************************************/
 /* 拓扑排序：找到入度为零的结点，遍历它的出边上的结点，知道遍历到一个
  * 没有出边的结点 */
@@ -55,5 +98,7 @@ void graphTraverseBFS(vector<vector<int>>& matrix) {
         }
     }
 }
+
+
 
 

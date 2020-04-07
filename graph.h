@@ -66,6 +66,10 @@ struct digraph {
 
 /*********************************************************************/
 
+/* Minimum spanning tree */
+
+// Grim
+int Prim(vector<vector<int>>& graph);
 
 /* 拓扑排序 */
 int topSort(digraph& gInput);
