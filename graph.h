@@ -57,11 +57,19 @@ struct topVertexNode {
 
 /*********************************************************************/
 
-// 图的数据结构
+// 有向图的数据结构
 struct digraph {
     vector<topVertexNode*> vertex_list;
     int n; // 结点数量
     int e; // 边的数量
+};
+
+/*********************************************************************/
+
+// Kruskal 最小生成树算法的数据结构
+struct road {
+    int a, b;  // the two end of an edge
+    int w;  // the length of edge ( the weight )
 };
 
 /*********************************************************************/
@@ -71,6 +79,9 @@ struct digraph {
 // Grim
 int Prim(vector<vector<int>>& graph);
 
+// Kruskal
+int Kruskal(vector<road>& graph, vector<int>& FUSet);
+
 /* 拓扑排序 */
 int topSort(digraph& gInput);
 
@@ -78,3 +89,4 @@ int topSort(digraph& gInput);
 void graphTraverseBFS(vector<vector<int>>& matrix);
 
 #endif //DATA_STRUCTURE_LEARN_GRAPH_H
+

@@ -47,6 +47,33 @@ int Prim(vector<vector<int>> &graph) {
 }
 
 
+/********************************************************************************/
+/* Description:  */
+/********************************************************************************/
+void sortRoad(vector<road>& graph) {
+
+}
+
+int getRoot(int p, vector<int>& FUSet) {
+    while (p != FUSet[p])
+        p = FUSet[p];
+    return p;
+}
+
+int Kruskal(vector<road>& graph, vector<int>& FUSet) {
+    int sum = 0;
+    sortRoad(graph);
+    for (int i = 1; i < graph.size(); i++) {
+        if (getRoot(graph[i].a, FUSet) != getRoot(graph[i].b, FUSet)) {
+            FUSet[graph[i].b] = graph[i].a;
+            sum += graph[i].w;
+        }
+    }
+    return sum;
+}
+
+
+
 /*******************************************************************/
 /* 拓扑排序：找到入度为零的结点，遍历它的出边上的结点，知道遍历到一个
  * 没有出边的结点 */
