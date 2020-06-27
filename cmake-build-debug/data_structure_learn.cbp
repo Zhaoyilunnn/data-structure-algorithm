@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/algorithm.cpp">
+			<Option target="data_structure_learn"/>
+		</Unit>
+		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/algorithm.h">
+			<Option target="data_structure_learn"/>
+		</Unit>
 		<Unit filename="/cygdrive/d/Program_Cpp/data_structure_learn/common.h">
 			<Option target="data_structure_learn"/>
 		</Unit>

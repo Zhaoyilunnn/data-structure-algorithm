@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/data_structure_learn.dir/algorithm.cpp.o"
   "CMakeFiles/data_structure_learn.dir/graph.cpp.o"
   "CMakeFiles/data_structure_learn.dir/main.cpp.o"
   "CMakeFiles/data_structure_learn.dir/sort.cpp.o"

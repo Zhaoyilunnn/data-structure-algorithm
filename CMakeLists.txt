@@ -8,4 +8,4 @@ include_directories(.)
 add_executable(data_structure_learn
         main.cpp
         tree.cpp
-        tree.h graph.cpp graph.h common.h sort.h sort.cpp)
+        tree.h graph.cpp graph.h common.h sort.h sort.cpp algorithm.h algorithm.cpp)
