@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/cygdrive/d/Program_Cpp/data_structure_algorithm/algorithm.cpp" "/cygdrive/d/Program_Cpp/data_structure_algorithm/cmake-build-debug/CMakeFiles/data_structure_learn.dir/algorithm.cpp.o"
-  "/cygdrive/d/Program_Cpp/data_structure_algorithm/graph.cpp" "/cygdrive/d/Program_Cpp/data_structure_algorithm/cmake-build-debug/CMakeFiles/data_structure_learn.dir/graph.cpp.o"
-  "/cygdrive/d/Program_Cpp/data_structure_algorithm/main.cpp" "/cygdrive/d/Program_Cpp/data_structure_algorithm/cmake-build-debug/CMakeFiles/data_structure_learn.dir/main.cpp.o"
-  "/cygdrive/d/Program_Cpp/data_structure_algorithm/sort.cpp" "/cygdrive/d/Program_Cpp/data_structure_algorithm/cmake-build-debug/CMakeFiles/data_structure_learn.dir/sort.cpp.o"
-  "/cygdrive/d/Program_Cpp/data_structure_algorithm/tree.cpp" "/cygdrive/d/Program_Cpp/data_structure_algorithm/cmake-build-debug/CMakeFiles/data_structure_learn.dir/tree.cpp.o"
+  "/cygdrive/d/Program_Cpp/data-structure-algorithm/algorithm.cpp" "/cygdrive/d/Program_Cpp/data-structure-algorithm/cmake-build-debug/CMakeFiles/data_structure_learn.dir/algorithm.cpp.o"
+  "/cygdrive/d/Program_Cpp/data-structure-algorithm/graph.cpp" "/cygdrive/d/Program_Cpp/data-structure-algorithm/cmake-build-debug/CMakeFiles/data_structure_learn.dir/graph.cpp.o"
+  "/cygdrive/d/Program_Cpp/data-structure-algorithm/main.cpp" "/cygdrive/d/Program_Cpp/data-structure-algorithm/cmake-build-debug/CMakeFiles/data_structure_learn.dir/main.cpp.o"
+  "/cygdrive/d/Program_Cpp/data-structure-algorithm/sort.cpp" "/cygdrive/d/Program_Cpp/data-structure-algorithm/cmake-build-debug/CMakeFiles/data_structure_learn.dir/sort.cpp.o"
+  "/cygdrive/d/Program_Cpp/data-structure-algorithm/tree.cpp" "/cygdrive/d/Program_Cpp/data-structure-algorithm/cmake-build-debug/CMakeFiles/data_structure_learn.dir/tree.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

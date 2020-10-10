@@ -1,2 +1,2 @@
-# data_structure_learn
-Self-learning data structure
+# data-structure-algorithm
+Records of ongoing and in-depth understanding of data structures and algorithms

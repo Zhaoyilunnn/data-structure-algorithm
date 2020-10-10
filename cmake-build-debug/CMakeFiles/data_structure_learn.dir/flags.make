@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/cygdrive/d/Program_Cpp/data_structure_algorithm/. 
+CXX_INCLUDES = -I/cygdrive/d/Program_Cpp/data-structure-algorithm/. 
 
