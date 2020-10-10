@@ -156,7 +156,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=data_structure_learn
+CMAKE_PROJECT_NAME:STATIC=data-structure-algorithm
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib.exe
@@ -243,6 +243,12 @@ ProcessorCount_cmd_nproc:FILEPATH=/usr/bin/nproc.exe
 
 //Path to a program.
 ProcessorCount_cmd_sysctl:FILEPATH=ProcessorCount_cmd_sysctl-NOTFOUND
+
+//Value Computed by CMake
+data-structure-algorithm_BINARY_DIR:STATIC=/cygdrive/d/Program_Cpp/data-structure-algorithm/cmake-build-debug
+
+//Value Computed by CMake
+data-structure-algorithm_SOURCE_DIR:STATIC=/cygdrive/d/Program_Cpp/data-structure-algorithm
 
 //Value Computed by CMake
 data_structure_learn_BINARY_DIR:STATIC=/cygdrive/d/Program_Cpp/data-structure-algorithm/cmake-build-debug
