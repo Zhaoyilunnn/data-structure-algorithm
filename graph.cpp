@@ -218,10 +218,11 @@ void DijkstraII(vector<vector<int>>& graph, int src, vector<int>& dest) {
 }
 
 
-/*******************************************************************/
-/* 拓扑排序：找到入度为零的结点，遍历它的出边上的结点，直到遍历到一个
- * 没有出边的结点 */
-/*******************************************************************/
+/**
+ * 拓扑排序：找到入度为零的结点，遍历它的出边上的结点，直到遍历到一个没有出边的结点
+ * @param gInput
+ * @return
+ */
 int topSort(digraph &gInput) {
     stack<topVertexNode*> topNodes; // 存储一开始入度为0的所有结点
     vector<topVertexNode*> nodes = gInput.vertex_list; // 存储邻接表

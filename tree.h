@@ -12,29 +12,38 @@
 #include "common.h"
 
 /****************************************************************/
-/* tree */
+/* basis binary tree */
 class treeNode {
     
 public:
-    int m_val = 0;
-    treeNode* m_left = nullptr;
-    treeNode* m_right= nullptr;
+    int m_val;
+    treeNode* m_left;
+    treeNode* m_right;
     
     // construct
-    explicit treeNode(int val) {
+    treeNode(int val) {
         m_val = val;
+        m_left = nullptr;
+        m_right = nullptr;
     }
     
     // deconstruct
     ~treeNode() {
-        delete m_left;
-        delete m_right;
-        m_val = 0;
+        destroy(m_left);
+        destroy(m_right);
     }
     
     // visit
     void Visit() {
         cout << "Visit: " << m_val << "\n";
+    }
+
+    void destroy(treeNode* node) {
+        if (node) {
+            destroy(node->m_left);
+            destroy(node->m_right);
+            delete node;
+        }
     }
 };
 
@@ -88,5 +97,30 @@ void inOrderTraverse(treeNodeThread* Head);
 treeNode* buildTree(vector<int>& level, vector<int>& inorder, int L, int R);
 /***************************************************************/
 
+/**
+ * https://www.geeksforgeeks.org/segment-tree-set-1-sum-of-given-range/
+ * Segment tree
+ * Query for Sum of given range
+ *  int getSum(node, l, r) {
+ *      if the range of the node is within l and r
+ *          return the value of the node
+ *      else if the range of the node is completely outside l and r
+ *          return 0
+ *      else
+ *          return getSum(node's left child, l, r) + getSum(node's right child, l, r)
+ *  }
+ */
+struct SegmentTreeNode {
+    int val;
+    int l;
+    int r;
+    SegmentTreeNode* left;
+    SegmentTreeNode* right;
+    SegmentTreeNode(int val) : val(val), l(0), r(0), left(nullptr), right(nullptr) {}
+};
+
+SegmentTreeNode* buildSegmentTree(const vector<int>& nums);
+int getSum(SegmentTreeNode* node, int l, int r);
+void destroySegmentTree(SegmentTreeNode* node);
 
 #endif //DATA_STRUCTURE_LEARN_GRAPH_H

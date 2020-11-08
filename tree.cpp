@@ -235,6 +235,37 @@ treeNode* buildTree(vector<int>& level, vector<int>& inorder, int L, int R) {
 }
 
 
+/**
+ * Segment tree
+ */
+void buildHelper(const vector<int>& nums, int l, int r, SegmentTreeNode* node) {
+    if (l == r) {
+        node->val = nums[l];
+        return;
+    }
+    int sum_val = 0;
+    for (int i = l; i <= r; i++) {
+        sum_val += nums[i];
+    }
+    node->val = sum_val;
+    int mid = l + (r - l) / 2;
+    node->left = new SegmentTreeNode(0);
+    node->right = new SegmentTreeNode(0);
+    buildHelper(nums, l, mid, node->left);
+    buildHelper(nums, mid + 1, r, node->right);
+}
 
+SegmentTreeNode* buildSegmentTree(const vector<int>& nums) {
+    auto* root = new SegmentTreeNode(0);
+    int l = 0, r = (int) nums.size() - 1;
+    buildHelper(nums, l, r, root);
+    return root;
+}
 
-
+void destroySegmentTree(SegmentTreeNode* node) {
+    if (node) {
+        destroySegmentTree(node->left);
+        destroySegmentTree(node->right);
+        delete node;
+    }
+}
