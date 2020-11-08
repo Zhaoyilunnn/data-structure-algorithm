@@ -19,7 +19,10 @@
 int main(int argc, const char * argv[]) {
 
     vector<int> nums = {1, 3, 5, 7, 9, 11};
-    SegmentTreeNode* root = buildSegmentTree(nums);
-    destroySegmentTree(root);
+
+    auto* seg_tree = new SegmentTree(nums);
+    int test_segment = seg_tree->GetSum(2, 4);
+    delete seg_tree;
+
     return 0;
 }

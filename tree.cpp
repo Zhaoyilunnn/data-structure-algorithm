@@ -235,10 +235,35 @@ treeNode* buildTree(vector<int>& level, vector<int>& inorder, int L, int R) {
 }
 
 
+/**********************************************************************************************************************/
 /**
- * Segment tree
+ * Segment tree start
  */
-void buildHelper(const vector<int>& nums, int l, int r, SegmentTreeNode* node) {
+SegmentTree::SegmentTree() {
+    root = new SegmentTreeNode(0);
+}
+
+SegmentTree::SegmentTree(const vector<int> &nums) {
+    root = new SegmentTreeNode(0);
+    BuildSegmentTree(nums);
+}
+
+SegmentTree::~SegmentTree() {
+    DestroySegmentTree(root);
+}
+
+void SegmentTree::BuildSegmentTree(const vector<int>& nums) {
+    int l = 0, r = (int) nums.size() - 1;
+    BuildHelper(nums, l, r, root);
+}
+
+int SegmentTree::GetSum(int l, int r) {
+    return GetSumHelper(root, l, r);
+}
+
+void SegmentTree::BuildHelper(const vector<int>& nums, int l, int r, SegmentTreeNode* node) {
+    node->l = l;
+    node->r = r;
     if (l == r) {
         node->val = nums[l];
         return;
@@ -251,21 +276,26 @@ void buildHelper(const vector<int>& nums, int l, int r, SegmentTreeNode* node) {
     int mid = l + (r - l) / 2;
     node->left = new SegmentTreeNode(0);
     node->right = new SegmentTreeNode(0);
-    buildHelper(nums, l, mid, node->left);
-    buildHelper(nums, mid + 1, r, node->right);
+    BuildHelper(nums, l, mid, node->left);
+    BuildHelper(nums, mid + 1, r, node->right);
 }
 
-SegmentTreeNode* buildSegmentTree(const vector<int>& nums) {
-    auto* root = new SegmentTreeNode(0);
-    int l = 0, r = (int) nums.size() - 1;
-    buildHelper(nums, l, r, root);
-    return root;
+int SegmentTree::GetSumHelper(SegmentTreeNode *node, int l, int r) {
+    if (node->l >= l && node->r <= r) {
+        return node->val;
+    }
+    if (node->r < l || node->l > r) {
+        return 0;
+    }
+    return GetSumHelper(node->left, l, r) + GetSumHelper(node->right, l, r);
 }
 
-void destroySegmentTree(SegmentTreeNode* node) {
+void SegmentTree::DestroySegmentTree(SegmentTreeNode* node) {
     if (node) {
-        destroySegmentTree(node->left);
-        destroySegmentTree(node->right);
+        DestroySegmentTree(node->left);
+        DestroySegmentTree(node->right);
         delete node;
     }
 }
+
+/**********************************************************************************************************************/

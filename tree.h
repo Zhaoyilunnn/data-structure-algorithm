@@ -119,8 +119,28 @@ struct SegmentTreeNode {
     SegmentTreeNode(int val) : val(val), l(0), r(0), left(nullptr), right(nullptr) {}
 };
 
-SegmentTreeNode* buildSegmentTree(const vector<int>& nums);
-int getSum(SegmentTreeNode* node, int l, int r);
-void destroySegmentTree(SegmentTreeNode* node);
+class SegmentTree {
+public:
+    SegmentTree();
+    SegmentTree(const vector<int>& nums);
+    ~SegmentTree();
+
+    // Building a segment tree from a vector
+    void BuildSegmentTree(const vector<int>& nums);
+    // Getting the sum of a specified interval
+    int GetSum(int l, int r);
+
+private:
+    // Root of segment tree
+    SegmentTreeNode* root;
+    // Helper function for building the tree
+    void BuildHelper(const vector<int>& nums, int l, int r, SegmentTreeNode* node);
+    // Helper function for getting sum of a given interval
+    int GetSumHelper(SegmentTreeNode *node, int l, int r);
+    // Destroying tree
+    void DestroySegmentTree(SegmentTreeNode* node);
+};
+
+
 
 #endif //DATA_STRUCTURE_LEARN_GRAPH_H
