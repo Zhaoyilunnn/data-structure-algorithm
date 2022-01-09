@@ -162,3 +162,29 @@ void heapSort(vector<int>& nums) {
         end--;
     }
 }
+
+
+// trick from leetcode answers
+std::vector<int> sortArray(std::vector<int>& nums) {
+    int minVal = INT_MAX, maxVAl = INT_MIN;
+
+    for(int i = 0; i < nums.size(); i++){
+        minVal = std::min(minVal, nums[i]);
+        maxVAl = std::max(maxVAl, nums[i]);
+    }
+
+    std::vector<int> tem(maxVAl - minVal + 1, 0);
+
+    for(int i = 0 ; i < nums.size(); i++){
+        tem[nums[i] - minVal]++;
+    }
+
+    int index = 0;
+    for(int i = 0; i < tem.size(); i++){
+        while(tem[i]--){
+            nums[index++] = i + minVal;
+        }
+    }
+
+    return nums;
+}
