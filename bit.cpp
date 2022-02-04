@@ -20,9 +20,10 @@ public:
 
         int i = 1;
         while (i < _n) {
-            int step = lowbit(i);
-            for (int j = i-step; j < i; j++) {
-                _tree[i] += nums[j];
+            _tree[i] += nums[i-1];
+            int j = i + lowbit(i); // find father node
+            if (j < _n) {
+                _tree[j] += _tree[i];
             }
             i++;
         }
