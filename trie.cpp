@@ -1,3 +1,6 @@
+// Trie implementation
+// Ref: https://oi-wiki.org/string/trie/
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -25,6 +28,8 @@ public:
         trie.push_back(node);
     }
 
+    ~Trie() {}
+
     std::vector<std::shared_ptr<Node> > trie;
     
     void insert(const std::string& word) {
@@ -32,7 +37,7 @@ public:
         int nid = 1;
         for (size_t i = 0; i < length; i++) {
             int c_id = word[i] - 'a';
-            if (!trie[nid-1]->char_vec[c_id]) {
+            if (!trie[nid-1]->char_vec[c_id]) { // If not found, create new node
                 auto node = std::make_shared<Node>();
                 trie.push_back(node);
                 trie[nid-1]->char_vec[c_id] = trie.size();
@@ -46,9 +51,10 @@ public:
         int nid = 1;
         for (size_t i = 0; i < length; i++) {
             int c_id = word[i] - 'a';
-            if (!trie[nid-1]->char_vec[c_id]) {
+            if (!trie[nid-1]->char_vec[c_id]) { // Not found
                 return false;
             }
+            // Continue to find in next node
             nid = trie[nid-1]->char_vec[c_id];
         }
         return true;
@@ -81,6 +87,16 @@ int main() {
     }
     
     trie->print();
+
+    auto test = "abcde";
+    if (!trie->find(test)) {
+        std::cout << "Word not found!" << std::endl;
+    }
+
+    test = "iill";
+    if (trie->find(test)) {
+        std::cout << "Word found!" << std::endl;
+    }
 
     return 0;
 }
