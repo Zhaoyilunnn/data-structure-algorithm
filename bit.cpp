@@ -1,4 +1,7 @@
-/* Binary Indexed Tree */
+/* Binary Indexed Tree 
+* Ref: https://oi-wiki.org/ds/fenwick/
+* 
+*/
 
 #include <iostream>
 #include <vector>
@@ -12,6 +15,8 @@ static inline int lowbit(int x) {
 
 class BIT {
 public:
+    // init from vector size (n = size + 1)
+    explicit BIT(int n) : _n(n), _tree(n, 0) {}
     
     // init from nums (a[1:_n])
     explicit BIT(const std::vector<int>& nums) {
@@ -39,6 +44,8 @@ public:
     }
     
     // add k to a[x]
+    // Attention: here x cannot be 0
+    // or it will ends up with a dead loop
     void add(int x, int k) {
         while (x < _n) {
             _tree[x] += k;
@@ -94,6 +101,15 @@ int main() {
     nums = {1,1,2,1,2,1};
     BIT bit2(nums);
     std::cout << bit2.kth(3) << std::endl;
+
+    // build from vector size
+    nums = {1,2,3,4,5,6,7,8};
+    int n = nums.size() + 1;
+    BIT bit3(n);
+    for (int i = 1; i < n; i++) {
+        bit3.add(i, nums[i-1]);
+    }
+    bit3.print();
 
     return 0;
 }
