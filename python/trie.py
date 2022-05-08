@@ -1,5 +1,6 @@
 import sys
 
+# TODO(yilun): now the find is actually "startswith"
 class Trie:
     """ A naive implementation of trie """
     
